@@ -7,6 +7,7 @@ struct CommData{
   byte driveRB;
   byte driveRF;
   
+  int intakePistons;
   int rampPistons;
 
   /**
@@ -19,6 +20,7 @@ struct CommData{
     driveLF(90),
     driveRB(90),
     driveRF(90),
+    intakePistons(0),
     rampPistons(0)
   {}
 };
