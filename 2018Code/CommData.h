@@ -6,9 +6,12 @@ struct CommData{
   byte driveLF;
   byte driveRB;
   byte driveRF;
-  
+
   int intakePistons;
   int rampPistons;
+  
+  int pulleyPiston;
+  int pulleyMotor;
 
   /**
    * ADD MORE HERE

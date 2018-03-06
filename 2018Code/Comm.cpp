@@ -76,13 +76,16 @@ void Comm::update(){
         //TODO update this
         _count_fail = 0;
         
-        _data_out->driveLB = _controller[0];
-        _data_out->driveLF = _controller[0];
-        _data_out->driveLF = _controller[0];
-        _data_out->driveLF = _controller[0];
+        _data_out->driveLB = _controller[3];
+        _data_out->driveLF = _controller[3];
+        _data_out->driveLF = _controller[5];
+        _data_out->driveLF = _controller[5];
 
-        _data_out->intakePistons = _controller[0];
-        _data_out->rampPistons = _controller[0];
+        _data_out->intakePistons = _controller[7];
+        _data_out->rampPistons = _controller[8];
+
+        _data_out->pulleyPiston = _controller[1];
+        _data_out->pulleyMotor = _controller[1];
         
         
 
