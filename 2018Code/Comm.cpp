@@ -76,16 +76,22 @@ void Comm::update(){
         //TODO update this
         _count_fail = 0;
         
-        _data_out->driveLB = _controller[3];
-        _data_out->driveLF = _controller[3];
-        _data_out->driveLF = _controller[5];
-        _data_out->driveLF = _controller[5];
+        _data_out->driveLB = _controller[4]; //left stick Y
+        _data_out->driveLF = _controller[4]; //left stick Y
+        _data_out->driveRF = _controller[6]; //right stick Y
+        _data_out->driveRB = _controller[6]; //right stick Y
 
-        _data_out->intakePistons = _controller[7];
-        _data_out->rampPistons = _controller[8];
+        _data_out->intakeMotor = _controller[1]; //right bumper
+        _data_out->intakePistons = _controller[7]; //left trigger
+        _data_out->rampPistons = _controller[8]; //right trigger
 
-        _data_out->pulleyPiston = _controller[1];
-        _data_out->pulleyMotor = _controller[1];
+        _data_out->pulleyPiston = _controller[2]; //dpad left
+        _data_out->pulleyMotor = _controller[2]; //dpad right
+
+        _data_out->simon_left_front = _controller[1]; //Y
+        _data_out->simon_left_back = _controller[1]; //X
+        _data_out->simon_right_front = _controller[1]; //B
+        _data_out->simon_right_back = _controller[1]; //A
         
         
 
