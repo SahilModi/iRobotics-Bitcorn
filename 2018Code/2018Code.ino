@@ -65,6 +65,14 @@ void setup() {
   pinMode(SS_RIGHT_BACK, OUTPUT);
 }
 
+/**
+ * TODO:
+ * Map 0-255 joystick values to 0-180 servo values (DONE)
+ * Trigger code on button up (DONE)
+ * Change pistons to switch state (DONE)
+ * Assignment operator (NOT NEEDED)
+ */
+
 void loop() {
   comm.update();
 
@@ -155,13 +163,5 @@ void loop() {
     delay(SIMON_SAYS_DELAY); 
     simonRightFront.setState(0);
   }
-
-  /**
-   * TODO:
-   * Map 0-255 joystick values to 0-180 servo values (Done)
-   * Trigger code on button up (DONE)
-   * Change pistons to switch state (DONE)
-   * Assignment operator (Hopefully not needed)
-   */
   
 }
