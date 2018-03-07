@@ -36,8 +36,8 @@ private:
   byte checkSumRX;    // check sum for recieving data 
   unsigned long read_time;
   
-  byte _data[8];
-  byte _controller[8];
+  byte _data[16];
+  byte _controller[16];
   byte _feedback[10];
   CommData *_data_out;
 

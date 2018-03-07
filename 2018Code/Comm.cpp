@@ -28,7 +28,7 @@ void Comm::update(){
   // this while block of code might not need the "packet_index == 0" condition
     // it causes the robot to be more tolerant of old data which can be bad
     // you might want to deleting that condition
-    while(packet_index == 0 && Serial.available() >= 22){
+    while(packet_index == 0 && Serial.available() >= 36){
         Serial.read();
     }
 
@@ -40,22 +40,14 @@ void Comm::update(){
                 packet_index++;
             }
         }
-        else if(packet_index < 9){
+        else if(packet_index < 17){
             _data[packet_index-1] = Serial.read();
             checkSumRX += _data[packet_index-1];
             packet_index++;
         }
-        else if(packet_index == 9){
-            if(Serial.read() == checkSumRX){
-                packet_index++;
-            }else{
-                packet_index=0;
-            }
-            checkSumRX = 0;
-        }
-        else if(packet_index == 10){
-            if(Serial.read() == 240){
-                for(i=0; i<8; i++){
+        else if(packet_index == 17){
+            if(Serial.read() == 254){
+                for(i=0; i<16; i++){  
                     _controller[i] = _data[i];
                 }
                 connection = true;
@@ -69,42 +61,41 @@ void Comm::update(){
     }
 
     if(connection){
-        // write the code below that you want to run 
-        // when the robot recieves valid data of the xbox controller
-        // basically all the motor control stuff
-
-        //TODO update this
         _count_fail = 0;
-        
-        _data_out->driveLB = _controller[4]; //left stick Y
-        _data_out->driveLF = _controller[4]; //left stick Y
-        _data_out->driveRF = _controller[6]; //right stick Y
-        _data_out->driveRB = _controller[6]; //right stick Y
 
-        _data_out->intakeMotor = _controller[1]; //right bumper
+        byte map_left_y = map(_controller[4], 0, 255, 0, 180);
+        byte map_right_y = map(_controller[6], 0, 255, 0, 180);
+        
+        _data_out->driveLB = map_left_y; //left stick Y
+        _data_out->driveLF = 180 - map_left_y; //left stick Y
+        _data_out->driveRB = map_right_y; //right stick Y
+        _data_out->driveRF = 180 - map_right_y; //right stick Y
+
+        _data_out->intakeMotor = _controller[1] & B00000010; //right bumper (binary = 2)
+
+        //TODO add if statement or map to something else
         _data_out->intakePistons = _controller[7]; //left trigger
-        _data_out->rampPistons = _controller[8]; //right trigger
+        _data_out->rampPistons = _controller[8] & 1; //right trigger
 
-        _data_out->pulleyPiston = _controller[2]; //dpad left
-        _data_out->pulleyMotor = _controller[2]; //dpad right
+        _data_out->pulleyPiston = _controller[2] & 16; //dpad left
+        _data_out->pulleyMotor = _controller[2] & 8; //dpad right
 
-        _data_out->simon_left_front = _controller[1]; //Y
-        _data_out->simon_left_back = _controller[1]; //X
-        _data_out->simon_right_front = _controller[1]; //B
-        _data_out->simon_right_back = _controller[1]; //A
+        _data_out->simon_left_front = _controller[1] & 8; //Y
+        _data_out->simon_left_back = _controller[1] & 16; //X
+        _data_out->simon_right_front = _controller[1] & 32; //B
+        _data_out->simon_right_back = _controller[1] & 64; //A
         
         
-
         // below is the code for sending feedback to the driver station
 
-        Serial.write(255);
-        checkSumTX = 0;
-        for(i=0; i<10; i++){
-            Serial.write(_feedback[i]);
-            checkSumTX += _feedback[i];
-        }
-        Serial.write(checkSumTX);
-        Serial.write(254);
+//        Serial.write(255);
+//        checkSumTX = 0;
+//        for(i=0; i<10; i++){
+//            Serial.write(_feedback[i]);
+//            checkSumTX += _feedback[i];
+//        }
+//        Serial.write(checkSumTX);
+//        Serial.write(254);
 
         read_time = millis();
     }
