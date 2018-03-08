@@ -1,0 +1,57 @@
+C:\Users\colli\Documents\Visual Studio 2015\Projects\360TestProject\BigPapaDS\360TestProject\bin\Debug\360TestProject.exe.config
+C:\Users\colli\Documents\Visual Studio 2015\Projects\360TestProject\BigPapaDS\360TestProject\bin\Debug\360TestProject.exe
+C:\Users\colli\Documents\Visual Studio 2015\Projects\360TestProject\BigPapaDS\360TestProject\bin\Debug\360TestProject.pdb
+C:\Users\colli\Documents\Visual Studio 2015\Projects\360TestProject\BigPapaDS\360TestProject\bin\Debug\SlimDX.dll
+C:\Users\colli\Documents\Visual Studio 2015\Projects\360TestProject\BigPapaDS\360TestProject\obj\Debug\BigPapaDS.csprojResolveAssemblyReference.cache
+C:\Users\colli\Documents\Visual Studio 2015\Projects\360TestProject\BigPapaDS\360TestProject\obj\Debug\BigPapaDs.iRoboticsCommandCenter.resources
+C:\Users\colli\Documents\Visual Studio 2015\Projects\360TestProject\BigPapaDS\360TestProject\obj\Debug\_360TestProject.Properties.Resources.resources
+C:\Users\colli\Documents\Visual Studio 2015\Projects\360TestProject\BigPapaDS\360TestProject\obj\Debug\BigPapaDS.csproj.GenerateResource.Cache
+C:\Users\colli\Documents\Visual Studio 2015\Projects\360TestProject\BigPapaDS\360TestProject\obj\Debug\360TestProject.exe
+C:\Users\colli\Documents\Visual Studio 2015\Projects\360TestProject\BigPapaDS\360TestProject\obj\Debug\360TestProject.pdb
+C:\Users\colli\Documents\Visual Studio 2015\Projects\360TestProject\BigPapaDS\360TestProject\bin\Debug\BigPapaDS.exe.config
+C:\Users\Eric\Documents\GitHub\BigPapaDS\360TestProject\bin\Debug\BigPapaDS.exe.config
+C:\Users\Eric\Documents\GitHub\BigPapaDS\360TestProject\obj\Debug\BigPapaDS.csprojResolveAssemblyReference.cache
+C:\Users\Eric\Documents\GitHub\BigPapaDS\360TestProject\obj\Debug\BigPapaDs.iRoboticsCommandCenter.resources
+C:\Users\Eric\Documents\GitHub\BigPapaDS\360TestProject\obj\Debug\BigPapaDs.Properties.Resources.resources
+C:\Users\Eric\Documents\GitHub\BigPapaDS\360TestProject\obj\Debug\BigPapaDS.csproj.GenerateResource.Cache
+C:\Users\Eric\Documents\GitHub\BigPapaDS\360TestProject\bin\Debug\BigPapaDS.exe
+C:\Users\Eric\Documents\GitHub\BigPapaDS\360TestProject\bin\Debug\BigPapaDS.pdb
+C:\Users\Eric\Documents\GitHub\BigPapaDS\360TestProject\bin\Debug\SlimDX.dll
+C:\Users\Eric\Documents\GitHub\BigPapaDS\360TestProject\obj\Debug\BigPapaDS.exe
+C:\Users\Eric\Documents\GitHub\BigPapaDS\360TestProject\obj\Debug\BigPapaDS.pdb
+C:\Users\Eric\Documents\djejDS\360TestProject\bin\Debug\BigPapaDS.exe.config
+C:\Users\Eric\Documents\djejDS\360TestProject\obj\Debug\BigPapaDS.exe
+C:\Users\Eric\Documents\djejDS\360TestProject\obj\Debug\BigPapaDS.pdb
+C:\Users\Eric\Documents\djejDS\360TestProject\bin\Debug\BigPapaDS.exe
+C:\Users\Eric\Documents\djejDS\360TestProject\bin\Debug\BigPapaDS.pdb
+C:\Users\Eric\Documents\djejDS\360TestProject\bin\Debug\SlimDX.dll
+C:\Users\Eric\Documents\djejDS\360TestProject\obj\Debug\BigPapaDS.csprojResolveAssemblyReference.cache
+C:\Users\Eric\Documents\djejDS\360TestProject\obj\Debug\BigPapaDs.iRoboticsCommandCenter.resources
+C:\Users\Eric\Documents\djejDS\360TestProject\obj\Debug\BigPapaDs.Properties.Resources.resources
+C:\Users\Eric\Documents\djejDS\360TestProject\obj\Debug\BigPapaDS.csproj.GenerateResource.Cache
+C:\Users\Eric\Documents\BigPapaDS backup\BigPapaDS_2.0\360TestProject\bin\Debug\BigPapaDS.exe.config
+C:\Users\Eric\Documents\BigPapaDS backup\BigPapaDS_2.0\360TestProject\obj\Debug\BigPapaDS.exe
+C:\Users\Eric\Documents\BigPapaDS backup\BigPapaDS_2.0\360TestProject\obj\Debug\BigPapaDS.pdb
+C:\Users\Eric\Documents\BigPapaDS backup\BigPapaDS_Trans-EVO\360TestProject\bin\Debug\BigPapaDS.exe.config
+C:\Users\Eric\Documents\BigPapaDS backup\BigPapaDS_Trans-EVO\360TestProject\obj\Debug\BigPapaDS.exe
+C:\Users\Eric\Documents\BigPapaDS backup\BigPapaDS_Trans-EVO\360TestProject\obj\Debug\BigPapaDS.pdb
+C:\Users\Eric\Documents\BigPapaDS backup\BigPapaDS_Trans-EVO\360TestProject\obj\Debug\BigPapaDS.csprojResolveAssemblyReference.cache
+C:\Users\Eric\Documents\BigPapaDS backup\BigPapaDS_Trans-EVO\360TestProject\obj\Debug\BigPapaDs.iRoboticsCommandCenter.resources
+C:\Users\Eric\Documents\BigPapaDS backup\BigPapaDS_Trans-EVO\360TestProject\obj\Debug\BigPapaDs.Properties.Resources.resources
+C:\Users\Eric\Documents\BigPapaDS backup\BigPapaDS_Trans-EVO\360TestProject\obj\Debug\BigPapaDS.csproj.GenerateResource.Cache
+C:\Users\Eric\Documents\BigPapaDS backup\BigPapaDS_Trans-EVO\360TestProject\bin\Debug\BigPapaDS.exe
+C:\Users\Eric\Documents\BigPapaDS backup\BigPapaDS_Trans-EVO\360TestProject\bin\Debug\BigPapaDS.pdb
+C:\Users\Eric\Documents\BigPapaDS backup\BigPapaDS_Trans-EVO\360TestProject\bin\Debug\SlimDX.dll
+C:\Users\Eric\Documents\BigPapaDS backup\BigPapaDS_TransFarmers\360TestProject\bin\Debug\BigPapaDS.exe.config
+C:\Users\Eric\Documents\BigPapaDS backup\BigPapaDS_TransFarmers\360TestProject\obj\Debug\BigPapaDS.exe
+C:\Users\Eric\Documents\BigPapaDS backup\BigPapaDS_TransFarmers\360TestProject\obj\Debug\BigPapaDS.pdb
+C:\Users\Eric\Documents\BigPapaDS backup\BigPapaDS_EVO\360TestProject\bin\Debug\BigPapaDS.exe.config
+C:\Users\Eric\Documents\BigPapaDS backup\BigPapaDS_EVO\360TestProject\obj\Debug\BigPapaDS.exe
+C:\Users\Eric\Documents\BigPapaDS backup\BigPapaDS_EVO\360TestProject\obj\Debug\BigPapaDS.pdb
+C:\Users\Eric\Documents\BigPapaDS backup\BigPapaDS_EVO\360TestProject\bin\Debug\BigPapaDS.exe
+C:\Users\Eric\Documents\BigPapaDS backup\BigPapaDS_EVO\360TestProject\bin\Debug\BigPapaDS.pdb
+C:\Users\Eric\Documents\BigPapaDS backup\BigPapaDS_EVO\360TestProject\bin\Debug\SlimDX.dll
+C:\Users\Eric\Documents\BigPapaDS backup\BigPapaDS_EVO\360TestProject\obj\Debug\BigPapaDS.csprojResolveAssemblyReference.cache
+C:\Users\Eric\Documents\BigPapaDS backup\BigPapaDS_EVO\360TestProject\obj\Debug\BigPapaDs.iRoboticsCommandCenter.resources
+C:\Users\Eric\Documents\BigPapaDS backup\BigPapaDS_EVO\360TestProject\obj\Debug\BigPapaDs.Properties.Resources.resources
+C:\Users\Eric\Documents\BigPapaDS backup\BigPapaDS_EVO\360TestProject\obj\Debug\BigPapaDS.csproj.GenerateResource.Cache
