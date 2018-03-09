@@ -6,15 +6,15 @@
 
 #include<Servo.h>
 
-DoublePiston pulleyPiston(PULLEY_PISTON);
-
-DoublePiston intakeLeft(INTAKE_LEFT);
-DoublePiston intakeRight(INTAKE_RIGHT);
-
-DoublePiston rampLeft(RAMP_LEFT);
-DoublePiston rampLeftMiddle(RAMP_LEFT_MIDDLE);
-DoublePiston rampRightMiddle(RAMP_RIGHT_MIDDLE);
-DoublePiston rampRight(RAMP_RIGHT);
+//DoublePiston pulleyPiston(PULLEY_PISTON);
+//
+//DoublePiston intakeLeft(INTAKE_LEFT);
+//DoublePiston intakeRight(INTAKE_RIGHT);
+//
+//DoublePiston rampLeft(RAMP_LEFT);
+//DoublePiston rampLeftMiddle(RAMP_LEFT_MIDDLE);
+//DoublePiston rampRightMiddle(RAMP_RIGHT_MIDDLE);
+//DoublePiston rampRight(RAMP_RIGHT);
 
 DoublePiston simonLeftFront(SS_LEFT_FRONT);
 DoublePiston simonLeftBack(SS_LEFT_BACK);
@@ -23,14 +23,15 @@ DoublePiston simonRightBack(SS_RIGHT_BACK);
 
 CommData data;
 CommData default_data;
-Comm comm(&data, 9600);
+SoftwareSerial XBee(10, 2);
+Comm comm(&data, 38400, &XBee);//38400, 57600
 
 Servo driveLB;
 Servo driveLF;
 Servo driveRB;
 Servo driveRF;
 Servo pulley;
-Servo intake;
+//Servo intake;
 
 bool intake_on = false;
 bool intake_pistons_trigger = false; //Allows for execution on button RELEASE instead of button push
@@ -48,21 +49,25 @@ void setup() {
   driveRB.attach(DRIVE_RIGHT_BACK);
   driveRF.attach(DRIVE_RIGHT_FRONT);
   pulley.attach(PULLEY_MOTOR);
-  intake.attach(INTAKE_MOTOR);
+//  intake.attach(INTAKE_MOTOR);
 
-  pinMode(INTAKE_LEFT, OUTPUT);
-  pinMode(INTAKE_RIGHT, OUTPUT);
-  pinMode(PULLEY_PISTON, OUTPUT);
-  
-  pinMode(RAMP_LEFT, OUTPUT);
-  pinMode(RAMP_LEFT_MIDDLE, OUTPUT);
-  pinMode(RAMP_RIGHT_MIDDLE, OUTPUT);
-  pinMode(RAMP_RIGHT, OUTPUT);
+//  pinMode(INTAKE_LEFT, OUTPUT);
+//  pinMode(INTAKE_RIGHT, OUTPUT);
+//  pinMode(PULLEY_PISTON, OUTPUT);
+//  
+//  pinMode(RAMP_LEFT, OUTPUT);
+//  pinMode(RAMP_LEFT_MIDDLE, OUTPUT);
+//  pinMode(RAMP_RIGHT_MIDDLE, OUTPUT);
+//  pinMode(RAMP_RIGHT, OUTPUT);
   
   pinMode(SS_LEFT_FRONT, OUTPUT);
   pinMode(SS_LEFT_BACK, OUTPUT);
   pinMode(SS_RIGHT_FRONT, OUTPUT);
   pinMode(SS_RIGHT_BACK, OUTPUT);
+
+  pinMode(30, OUTPUT);
+  digitalWrite(30, LOW);
+  Serial.begin(9600);
 }
 
 /**
@@ -76,70 +81,79 @@ void setup() {
 void loop() {
   comm.update();
 
-  if(comm.getFailures() > 6){
-    //default values if the communications fail
-    data = default_data;
-  }
+//  if(comm.getFailures() > 6){
+//    //default values if the communications fail
+//    data = default_data;
+//  }
 
+//Serial.println(data.driveLB);
+if(abs(data.driveLB - 90) > 7){
   driveLB.write(data.driveLB);
+//  Serial.println(data.driveLF);
   driveLF.write(data.driveLF);
+}
+else{
+  driveLB.write(90);
+  driveLF.write(90);
+}
   driveRB.write(data.driveRB);
   driveRF.write(data.driveRF);
 
 
   //========================intake========================
-  if(data.intakePistons && !intake_pistons_trigger){
-    intake_pistons_trigger = true;
-  }
-  else if(!data.intakePistons && intake_pistons_trigger){
-    intakeLeft.switchState();
-    intakeRight.switchState();
-    intake_pistons_trigger = false;
-  }
-  if(data.intakeMotor && !intake_motor_trigger){
-    intake_motor_trigger = false;
-  }
-  else if(!data.intakeMotor && intake_motor_trigger){ 
-    //toggle intake motor
-    if(!intake_on){
-      intake.write(150); //faster than half speed
-      intake_on = true;
-    }
-    else{
-      intake.write(90);
-      intake_on = false;
-    }
-    intake_motor_trigger = false;
-  }
+//  if(data.intakePistons && !intake_pistons_trigger){
+//    intake_pistons_trigger = true;
+//  }
+//  else if(!data.intakePistons && intake_pistons_trigger){
+//    intakeLeft.switchState();
+//    intakeRight.switchState();
+//    intake_pistons_trigger = false;
+//  }
+//  if(data.intakeMotor && !intake_motor_trigger){
+//    intake_motor_trigger = false;
+//  }
+//  else if(!data.intakeMotor && intake_motor_trigger){ 
+//    //toggle intake motor
+//    if(!intake_on){
+//      intake.write(150); //faster than half speed
+//      intake_on = true;
+//    }
+//    else{
+//      intake.write(90);
+//      intake_on = false;
+//    }
+//    intake_motor_trigger = false;
+//  }
 
   
   //========================pulley========================
-  if(data.pulleyPiston && !pulley_piston_trigger){
-    pulley_piston_trigger = true;
-  }
-  else if(!data.pulleyPiston && pulley_piston_trigger){
-    pulleyPiston.switchState();
-    pulley_piston_trigger = false;
-  }
-  if(data.pulleyMotor){
-    pulley.write(120); //less than half speed
-  }
-  else{
-    pulley.write(90); //stop
-  }
+//  if(data.pulleyPiston && !pulley_piston_trigger){
+//    pulley_piston_trigger = true;
+//  }
+//  else if(!data.pulleyPiston && pulley_piston_trigger){
+//    pulleyPiston.switchState();
+//    pulley_piston_trigger = false;
+//  }
+//  if(data.pulleyMotor){
+//    pulley.write(180); //less than half speed
+//  }
+//  else{
+//    pulley.write(0); //stop
+//  }
+  pulley.write(data.driveLB);
   
 
   //========================ramp pistons========================
-  if(data.rampPistons && !ramp_pistons_trigger){
-    ramp_pistons_trigger = true;
-  }
-  else if(!data.rampPistons && ramp_pistons_trigger){
-    rampLeft.switchState();
-    rampLeftMiddle.switchState();
-    rampRight.switchState();
-    rampRightMiddle.switchState();
-    ramp_pistons_trigger = false;
-  }
+//  if(data.rampPistons && !ramp_pistons_trigger){
+//    ramp_pistons_trigger = true;
+//  }
+//  else if(!data.rampPistons && ramp_pistons_trigger){
+//    rampLeft.switchState();
+//    rampLeftMiddle.switchState();
+//    rampRight.switchState();
+//    rampRightMiddle.switchState();
+//    ramp_pistons_trigger = false;
+//  }
   
 
   //========================simon says pistons========================
@@ -163,5 +177,7 @@ void loop() {
     delay(SIMON_SAYS_DELAY); 
     simonRightFront.setState(0);
   }
+
+  delay(30);
   
 }

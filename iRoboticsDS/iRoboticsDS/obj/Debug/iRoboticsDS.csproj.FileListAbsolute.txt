@@ -1,0 +1,10 @@
+c:\users\johns\documents\visual studio 2015\Projects\iRoboticsDS\iRoboticsDS\bin\Debug\iRoboticsDS.exe.config
+c:\users\johns\documents\visual studio 2015\Projects\iRoboticsDS\iRoboticsDS\bin\Debug\iRoboticsDS.exe
+c:\users\johns\documents\visual studio 2015\Projects\iRoboticsDS\iRoboticsDS\bin\Debug\iRoboticsDS.pdb
+c:\users\johns\documents\visual studio 2015\Projects\iRoboticsDS\iRoboticsDS\obj\Debug\iRoboticsDS.csprojResolveAssemblyReference.cache
+c:\users\johns\documents\visual studio 2015\Projects\iRoboticsDS\iRoboticsDS\obj\Debug\iRoboticsDS.Properties.Resources.resources
+c:\users\johns\documents\visual studio 2015\Projects\iRoboticsDS\iRoboticsDS\obj\Debug\iRoboticsDS.csproj.GenerateResource.Cache
+c:\users\johns\documents\visual studio 2015\Projects\iRoboticsDS\iRoboticsDS\obj\Debug\iRoboticsDS.exe
+c:\users\johns\documents\visual studio 2015\Projects\iRoboticsDS\iRoboticsDS\obj\Debug\iRoboticsDS.pdb
+c:\users\johns\documents\visual studio 2015\Projects\iRoboticsDS\iRoboticsDS\bin\Debug\SlimDX.dll
+C:\Users\johns\Documents\Visual Studio 2015\Projects\iRoboticsDS\iRoboticsDS\obj\Debug\iRoboticsDS.DriverStation.resources

@@ -3,6 +3,7 @@
 
 #include <Arduino.h>
 #include "CommData.h"
+#include<SoftwareSerial.h>
 
 /**
  * This code is for one controller
@@ -13,7 +14,7 @@
 
 class Comm{
 public:
-  Comm(CommData* data, long baud_rate);
+  Comm(CommData* data, long baud_rate, SoftwareSerial*);
   /**
    * Basically, write out to PC through serial,
    * and read from serial, update the internal servo values.
@@ -22,11 +23,11 @@ public:
   void update();
   void failsafe();
 
-  int getFailures();
-  
+  int getFailures(); 
   
   
 private:
+  SoftwareSerial *XBee;
   boolean connection;
   byte x;
   byte packet_index;
@@ -36,8 +37,8 @@ private:
   byte checkSumRX;    // check sum for recieving data 
   unsigned long read_time;
   
-  byte _data[16];
-  byte _controller[16];
+  byte _data[8];
+  byte _controller[8];
   byte _feedback[10];
   CommData *_data_out;
 

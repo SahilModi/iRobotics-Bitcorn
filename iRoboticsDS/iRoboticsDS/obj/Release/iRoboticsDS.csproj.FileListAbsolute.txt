@@ -1,0 +1,10 @@
+C:\Users\johns\Documents\Visual Studio 2015\Projects\iRoboticsDS\iRoboticsDS\bin\Release\iRoboticsDS.exe.config
+C:\Users\johns\Documents\Visual Studio 2015\Projects\iRoboticsDS\iRoboticsDS\bin\Release\iRoboticsDS.exe
+C:\Users\johns\Documents\Visual Studio 2015\Projects\iRoboticsDS\iRoboticsDS\bin\Release\iRoboticsDS.pdb
+C:\Users\johns\Documents\Visual Studio 2015\Projects\iRoboticsDS\iRoboticsDS\bin\Release\SlimDX.dll
+C:\Users\johns\Documents\Visual Studio 2015\Projects\iRoboticsDS\iRoboticsDS\obj\Release\iRoboticsDS.DriverStation.resources
+C:\Users\johns\Documents\Visual Studio 2015\Projects\iRoboticsDS\iRoboticsDS\obj\Release\iRoboticsDS.Properties.Resources.resources
+C:\Users\johns\Documents\Visual Studio 2015\Projects\iRoboticsDS\iRoboticsDS\obj\Release\iRoboticsDS.csproj.GenerateResource.Cache
+C:\Users\johns\Documents\Visual Studio 2015\Projects\iRoboticsDS\iRoboticsDS\obj\Release\iRoboticsDS.exe
+C:\Users\johns\Documents\Visual Studio 2015\Projects\iRoboticsDS\iRoboticsDS\obj\Release\iRoboticsDS.pdb
+C:\Users\johns\Documents\Visual Studio 2015\Projects\iRoboticsDS\iRoboticsDS\obj\Release\iRoboticsDS.csprojResolveAssemblyReference.cache
