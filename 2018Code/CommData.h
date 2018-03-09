@@ -29,7 +29,7 @@ struct CommData{
     driveRB(90),
     driveRF(90),
     intakeMotor(0),
-    pulleyMotor(0),
+    pulleyMotor(90),
     intakePistons(0),
     rampPistons(0),
     pulleyPiston(0),
