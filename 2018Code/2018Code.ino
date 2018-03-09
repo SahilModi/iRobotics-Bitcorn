@@ -6,16 +6,6 @@
 
 #include<Servo.h>
 
-//DoublePiston pulleyPiston(PULLEY_PISTON);
-//
-//DoublePiston intakeLeft(INTAKE_LEFT);
-//DoublePiston intakeRight(INTAKE_RIGHT);
-//
-//DoublePiston rampLeft(RAMP_LEFT);
-//DoublePiston rampLeftMiddle(RAMP_LEFT_MIDDLE);
-//DoublePiston rampRightMiddle(RAMP_RIGHT_MIDDLE);
-//DoublePiston rampRight(RAMP_RIGHT);
-
 DoublePiston simonLeftFront(SS_LEFT_FRONT);
 DoublePiston simonLeftBack(SS_LEFT_BACK);
 DoublePiston simonRightFront(SS_RIGHT_FRONT);
@@ -31,15 +21,6 @@ Servo driveLF;
 Servo driveRB;
 Servo driveRF;
 Servo pulley;
-//Servo intake;
-
-bool intake_on = false;
-bool intake_pistons_trigger = false; //Allows for execution on button RELEASE instead of button push
-bool intake_motor_trigger = false;
-
-bool pulley_piston_trigger = false;
-
-bool ramp_pistons_trigger = false;
 
 #define SIMON_SAYS_DELAY 400
 
@@ -49,24 +30,13 @@ void setup() {
   driveRB.attach(DRIVE_RIGHT_BACK);
   driveRF.attach(DRIVE_RIGHT_FRONT);
   pulley.attach(PULLEY_MOTOR);
-//  intake.attach(INTAKE_MOTOR);
-
-//  pinMode(INTAKE_LEFT, OUTPUT);
-//  pinMode(INTAKE_RIGHT, OUTPUT);
-//  pinMode(PULLEY_PISTON, OUTPUT);
-//  
-//  pinMode(RAMP_LEFT, OUTPUT);
-//  pinMode(RAMP_LEFT_MIDDLE, OUTPUT);
-//  pinMode(RAMP_RIGHT_MIDDLE, OUTPUT);
-//  pinMode(RAMP_RIGHT, OUTPUT);
+  
   
   pinMode(SS_LEFT_FRONT, OUTPUT);
   pinMode(SS_LEFT_BACK, OUTPUT);
   pinMode(SS_RIGHT_FRONT, OUTPUT);
   pinMode(SS_RIGHT_BACK, OUTPUT);
-
-  pinMode(30, OUTPUT);
-  digitalWrite(30, LOW);
+  
   Serial.begin(9600);
 }
 
@@ -81,83 +51,45 @@ void setup() {
 void loop() {
   comm.update();
 
-//  if(comm.getFailures() > 6){
-//    //default values if the communications fail
-//    data = default_data;
-//  }
+  if(comm.getFailures() > 6){
+    //default values if the communications fail
+    data = default_data;
+  }
 
-//Serial.println(data.driveLB);
-if(abs(data.driveLB - 90) > 7){
+
   driveLB.write(data.driveLB);
-//  Serial.println(data.driveLF);
   driveLF.write(data.driveLF);
-}
-else{
-  driveLB.write(90);
-  driveLF.write(90);
-}
+
   driveRB.write(data.driveRB);
   driveRF.write(data.driveRF);
 
-
-  //========================intake========================
-//  if(data.intakePistons && !intake_pistons_trigger){
-//    intake_pistons_trigger = true;
-//  }
-//  else if(!data.intakePistons && intake_pistons_trigger){
-//    intakeLeft.switchState();
-//    intakeRight.switchState();
-//    intake_pistons_trigger = false;
-//  }
-//  if(data.intakeMotor && !intake_motor_trigger){
-//    intake_motor_trigger = false;
-//  }
-//  else if(!data.intakeMotor && intake_motor_trigger){ 
-//    //toggle intake motor
-//    if(!intake_on){
-//      intake.write(150); //faster than half speed
-//      intake_on = true;
-//    }
-//    else{
-//      intake.write(90);
-//      intake_on = false;
-//    }
-//    intake_motor_trigger = false;
-//  }
-
+  if(data.pulleyMotor){
+    pulley.write(150);
+  }
+  else{
+    pulley.write(90);
+  }
   
-  //========================pulley========================
-//  if(data.pulleyPiston && !pulley_piston_trigger){
-//    pulley_piston_trigger = true;
-//  }
-//  else if(!data.pulleyPiston && pulley_piston_trigger){
-//    pulleyPiston.switchState();
-//    pulley_piston_trigger = false;
-//  }
-//  if(data.pulleyMotor){
-//    pulley.write(180); //less than half speed
-//  }
-//  else{
-//    pulley.write(0); //stop
-//  }
-  pulley.write(data.driveLB);
-  
-
-  //========================ramp pistons========================
-//  if(data.rampPistons && !ramp_pistons_trigger){
-//    ramp_pistons_trigger = true;
-//  }
-//  else if(!data.rampPistons && ramp_pistons_trigger){
-//    rampLeft.switchState();
-//    rampLeftMiddle.switchState();
-//    rampRight.switchState();
-//    rampRightMiddle.switchState();
-//    ramp_pistons_trigger = false;
-//  }
   
 
   //========================simon says pistons========================
+//  Serial.println(data.simon_left_back);
   if(data.simon_left_back){
+//    Serial.println("In calibration");
+//    int pos = 0;
+//      for (pos = 0; pos <= 180; pos += 1) { // goes from 0 degrees to 180 degrees
+//      // in steps of 1 degree
+//      driveRB.write(pos);              // tell servo to go to position in variable 'pos'
+//      delay(50);                       // waits 15ms for the servo to reach the position
+//    }
+//    for (pos = 180; pos >= 0; pos -= 1) { // goes from 180 degrees to 0 degrees
+//      driveRB.write(pos);              // tell servo to go to position in variable 'pos'
+//      delay(50);                       // waits 15ms for the servo to reach the position
+//      if(pos == 90){
+//        Serial.println("Neutral");
+//        delay(3000);
+//      }
+//    }
     simonLeftBack.setState(1);
     delay(SIMON_SAYS_DELAY); 
     simonLeftBack.setState(0);
@@ -177,7 +109,5 @@ else{
     delay(SIMON_SAYS_DELAY); 
     simonRightFront.setState(0);
   }
-
-  delay(30);
   
 }

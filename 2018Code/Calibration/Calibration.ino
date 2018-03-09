@@ -5,7 +5,7 @@ int pos = 0;
 Servo serv;
 void setup() {
   // put your setup code here, to run once:
-  serv.attach(8);
+  serv.attach(7);
   Serial.begin(9600);
 }
 

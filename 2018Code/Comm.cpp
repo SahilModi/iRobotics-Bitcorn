@@ -91,22 +91,21 @@ void Comm::update(){
         
 
         byte map_left_y = map(_controller[3], 0, 200, 0, 180);
-        byte map_right_y = map(_controller[5], 0, 200, 0, 180);
-//        Serial.println(map_left_y);
+
+        byte map_right_x = map(_controller[4], 0, 200, 0, 180);
+
+        byte drive_left = map_left_y;
+        byte drive_right = 180 - map_left_y;
+
+        if(abs(map_right_x - 90) > 5){
+          drive_left = map_right_x;
+          drive_right = map_right_x;
+        }
         
-        _data_out->driveLB = map_left_y; //left stick Y
-        _data_out->driveLF = map_left_y; //left stick Y
-        _data_out->driveRB = 180 - map_right_y; //right stick Y
-        _data_out->driveRF = 180 - map_right_y; //right stick Y
-
-//        _data_out->intakeMotor = _controller[1] & 32; //right bumper
-
-        //TODO add if statement or map to something else
-//        _data_out->intakePistons = _controller[6] & 1; //left trigger
-//        _data_out->rampPistons = _controller[7] & 1; //right trigger
-
-//        if(_controller[1] & 4){_data_out->pulleyPiston = 1;} //dpad left
-//        else {_data_out->pulleyPiston = 0;}
+        _data_out->driveLB = drive_left; //left stick Y
+        _data_out->driveLF = drive_left; //left stick Y
+        _data_out->driveRB = drive_right; //right stick Y
+        _data_out->driveRF = drive_right; //right stick Y
         
         if(_controller[1] & 8){_data_out->pulleyMotor = 1;} //dpad right;
         else {_data_out->pulleyMotor = 0;}
@@ -123,7 +122,7 @@ void Comm::update(){
         else {_data_out->simon_right_front = 0;}
         
         if(_controller[0] & 1){_data_out->simon_right_back = 1;} //A
-        else {_data_out->simon_left_back = 0;}
+        else {_data_out->simon_right_back = 0;}
         
         
         // below is the code for sending feedback to the driver station
